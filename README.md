@@ -1,24 +1,31 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# <アプリ名>
+Dream House
 
-Things you may want to cover:
+## サイト概要
+家を売りたい個人と買いたい個人を結びつける仲介サイト
 
-* Ruby version
+### サイトテーマ
+仲介業者を挟まずに売主と買主を直接結びつけることでより安心した住宅の購入を促進するとともに、買主から住宅のストーリーそのものを受け継ぐことができるサイト。
 
-* System dependencies
+### テーマを選んだ理由
+Airbnbなど不動産に関して、個人と個人を結びつけるビジネスが生まれてきている。
+また、メルカリなどに代表される中古品市場の広がりも近年著しく、住宅業界ではリノベーションも慣れた言葉となってきている。
+今後の中古住宅市場の広がりにあわせて、より安心した住宅購入ができるサービスが必要になるのではないかと考えた。
+また、売買を通じて失ってしまいがちである、一つ一つの住宅のもつストーリーも受け継いでいけるサイトとなれば良いと考えたため。
 
-* Configuration
+### ターゲットユーザ
+中古住宅に関心のある売主と買主。
+特に、仲介業者を通さないことで提供できるクリアで健全な住宅購入に共感できる一般ユーザー。
 
-* Database creation
+### 主な利用シーン
+住宅を売却したい人は、自身の所有する物件をサイトに掲載することが可能。
+住宅を購入したい人は、希望するエリアで物件検索を行い、購入することが可能。
 
-* Database initialization
+## 設計書
 
-* How to run the test suite
+### 機能一覧
+https://docs.google.com/spreadsheets/d/1EGEPJqCb9uKtW5wClFmgHPl5fVBZEFwEV2_aXfv_4TY/edit#gid=979011115
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
-
-* ...
