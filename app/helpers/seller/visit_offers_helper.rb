@@ -1,0 +1,2 @@
+module Seller::VisitOffersHelper
+end

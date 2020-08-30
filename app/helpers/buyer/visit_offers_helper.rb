@@ -1,0 +1,2 @@
+module Buyer::VisitOffersHelper
+end

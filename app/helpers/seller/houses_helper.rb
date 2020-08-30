@@ -1,0 +1,2 @@
+module Seller::HousesHelper
+end
