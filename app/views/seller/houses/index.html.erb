@@ -1,2 +1,71 @@
-<h1>Seller::Houses#index</h1>
-<p>Find me in app/views/seller/houses/index.html.erb</p>
+<div class="body-height">
+	<div class="container">
+		<h1>掲載物件一覧</h1>
+　　　　　<!--each文で回す予定-->
+        <% @houses.each do |h| %>
+		<!--Photo欄を作成すること-->
+		<table class="">
+				<tr>
+					<th class="col-xs-2">顧客ID</th>
+					<td class="col-xs-8">
+						<%= @customer.id %>
+						<!--販売ステータスへ変更すること-->
+						<% if @customer.is_enabled == true %>
+								<span class="label label-primary admittion_status_label">有効会員</span>
+							<% else %>
+								<span class="label label-danger admittion_status_label">退会済会員</span>
+						<% end %>
+					</td>
+				</tr>
+				<!--変数書き換えること-->
+				<tr>
+					<th>物件名</th>
+					<td><%= h.name %></td>
+				</tr>
+				<tr>
+					<th>販売価格</th>
+					<td><%= h.price %></td>
+				</tr>
+				<tr>
+					<th>建物種別</th>
+					<td><%= h.category %></td>
+				</tr>
+				<tr>
+					<th>間取り</th>
+					<td><%= h.floor_plan %></td>
+				</tr>
+				<tr>
+					<th>郵便番号</th>
+					<td><%= h.zip_code %></td>
+				</tr>
+				<tr>
+					<th>住所</th>
+					<td><%= h.address %></td>
+				</tr>
+				<tr>
+					<th>土地面積</th>
+					<td><%= h.land_area %></td>
+				</tr>
+				<tr>
+					<th>建物面積</th>
+					<td><%= h.building_area %></td>
+				</tr>
+				<tr>
+					<th>築年数</th>
+					<td><%= h.old %></td>
+				</tr>
+			</table>
+
+			<div>見学オファー数</div>
+			<div>購入オファー数</div>
+			<%= link_to '+掲載内容を変更する', edit_seller_house_path, class: "btn btn-primary btn-circle pull-right" %>
+			<!--新規アクション作成の上、path設定-->
+			<%= link_to '+掲載を取りやめる', edit_seller_house_path, class: "btn btn-primary btn-circle pull-right" %>
+
+			<% end %>
+			<!--each文で回す予定-->
+
+	  <%= link_to '+掲載物件を追加する', new_seller_house_path, class: "btn btn-primary btn-circle pull-right" %>
+
+	</div>
+</div>

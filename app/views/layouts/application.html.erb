@@ -10,6 +10,14 @@
   </head>
 
   <body>
+     <!--headerのデザイン分岐-->
+     <header class="header">
+          <% if seller_signed_in? %>
+              <%= render 'layouts/seller_header' %>
+          <% else %>
+              <%= render 'layouts/buyer_header' %>
+          <% end %>
+      </header>
     <%= yield %>
   </body>
 </html>

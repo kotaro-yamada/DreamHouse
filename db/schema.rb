@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_27_162843) do
+ActiveRecord::Schema.define(version: 2020_09_05_160428) do
 
   create_table "buyers", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -20,8 +20,38 @@ ActiveRecord::Schema.define(version: 2020_08_27_162843) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "last_name_kanji"
+    t.string "first_name_kanji"
+    t.string "last_name_kana"
+    t.string "first_name_kana"
+    t.string "zip_code"
+    t.string "address"
+    t.string "phone_number"
     t.index ["email"], name: "index_buyers_on_email", unique: true
     t.index ["reset_password_token"], name: "index_buyers_on_reset_password_token", unique: true
+  end
+
+  create_table "houses", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "name"
+    t.string "price"
+    t.string "zip_code"
+    t.string "address"
+    t.integer "category"
+    t.integer "floor_plan"
+    t.integer "old"
+    t.string "land_area"
+    t.string "building_area"
+    t.integer "sales_status"
+    t.integer "seller_id"
+  end
+
+  create_table "photos", force: :cascade do |t|
+    t.integer "house_id"
+    t.string "image_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "sellers", force: :cascade do |t|
@@ -32,6 +62,13 @@ ActiveRecord::Schema.define(version: 2020_08_27_162843) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "last_name_kanji"
+    t.string "first_name_kanji"
+    t.string "last_name_kana"
+    t.string "first_name_kana"
+    t.string "zip_code"
+    t.string "address"
+    t.string "phone_number"
     t.index ["email"], name: "index_sellers_on_email", unique: true
     t.index ["reset_password_token"], name: "index_sellers_on_reset_password_token", unique: true
   end

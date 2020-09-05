@@ -1,0 +1,19 @@
+<div class="container">
+   <div class="row">
+	<% if seller_signed_in? %>
+	  <ul class="nav navbar-nav navbar-right">	
+		<li>
+		  <%= link_to "概要", seller_top_path, class: "nav-link btn btn-success" %>
+		</li>
+		<li>
+		  <%= link_to '準備', seller_preparation_path, class: "nav-link btn btn-success" %>
+		</li>
+		<li>
+		  <%= link_to '安全', seller_safety_path, class: "nav-link btn btn-success" %>
+		</li>
+		<li>
+		  <%= link_to '決済', seller_settlement_path, class: "nav-link btn btn-success" %>
+		</li>
+	  </ul>
+	  <% end %>
+	</div>
