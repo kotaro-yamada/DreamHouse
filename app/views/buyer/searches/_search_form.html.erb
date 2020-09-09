@@ -1,0 +1,8 @@
+<div>
+<%= search_form_for(q, url:  buyer_search_path) do |f| %>
+    <%= f.label :'建物種別' %>
+    <%= f.radio_button :category_eq, :'戸建て', {:checked => true} %>戸建て
+    <%= f.radio_button :category_eq, :'マンション' %>マンション
+    <%= f.submit %>
+<% end %>
+</div>

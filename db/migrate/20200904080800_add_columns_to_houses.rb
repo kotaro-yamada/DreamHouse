@@ -10,5 +10,6 @@ class AddColumnsToHouses < ActiveRecord::Migration[5.2]
   	add_column :houses, :land_area, :string
   	add_column :houses, :building_area, :string
   	add_column :houses, :sales_status, :integer
+    add_column :houses, :image_id, :string
   end
 end

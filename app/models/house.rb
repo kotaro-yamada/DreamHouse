@@ -1,5 +1,8 @@
 class House < ApplicationRecord
 	has_many :photos, dependent: :destroy
+	has_many :purchase_offers, dependent: :destroy
+	#refile導入
+	attachment :image
 	#category
 	enum category: {戸建て: 0, マンション: 1}
 	#floor_plan

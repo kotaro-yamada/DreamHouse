@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_05_160428) do
+ActiveRecord::Schema.define(version: 2020_09_09_182129) do
 
   create_table "buyers", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -44,7 +44,10 @@ ActiveRecord::Schema.define(version: 2020_09_05_160428) do
     t.string "land_area"
     t.string "building_area"
     t.integer "sales_status"
+    t.string "image_id"
     t.integer "seller_id"
+    t.string "prefecture"
+    t.string "city"
   end
 
   create_table "photos", force: :cascade do |t|
@@ -52,6 +55,22 @@ ActiveRecord::Schema.define(version: 2020_09_05_160428) do
     t.string "image_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "purchase_offers", force: :cascade do |t|
+    t.integer "buyer_id"
+    t.integer "house_id"
+    t.integer "price"
+    t.integer "order_status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "zip_code"
+    t.string "address"
+    t.string "phone_number"
+    t.string "first_name_kanji"
+    t.string "last_name_kanji"
+    t.string "first_name_kana"
+    t.string "last_name_kana"
   end
 
   create_table "sellers", force: :cascade do |t|
@@ -71,6 +90,22 @@ ActiveRecord::Schema.define(version: 2020_09_05_160428) do
     t.string "phone_number"
     t.index ["email"], name: "index_sellers_on_email", unique: true
     t.index ["reset_password_token"], name: "index_sellers_on_reset_password_token", unique: true
+  end
+
+  create_table "visit_offers", force: :cascade do |t|
+    t.integer "house_id"
+    t.integer "buyer_id"
+    t.integer "amount"
+    t.integer "order_status"
+    t.string "last_name_kanji"
+    t.string "first_name_kanji"
+    t.string "last_name_kana"
+    t.string "first_name_kana"
+    t.string "zip_code"
+    t.string "address"
+    t.string "phone_number"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

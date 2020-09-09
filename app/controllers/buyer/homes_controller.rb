@@ -1,4 +1,7 @@
 class Buyer::HomesController < ApplicationController
-  def home
+  def top
+  	#ransack
+  	@q = House.ransack(params[:q])
+    @houses = @q.result(distinct: true)
   end
 end

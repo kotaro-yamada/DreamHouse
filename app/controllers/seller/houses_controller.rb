@@ -9,14 +9,13 @@ class Seller::HousesController < ApplicationController
 
   def new
     @house = House.new
-    @photo = Photo.new
   end
 
   def create
     @house = House.new(house_params)
     if @house.save
-      redirect_to seller_houses_index_path(@house)
       flash[:notice] ='物件を新規登録しました'
+      redirect_to seller_houses_path(@house)
     else
       render :new
     end
@@ -24,6 +23,7 @@ class Seller::HousesController < ApplicationController
 
   def edit
     @house = House.find(params[:id])
+    @photo = Photo.new
   end
 
   def update
@@ -41,6 +41,6 @@ class Seller::HousesController < ApplicationController
 
   private
   def house_params
-    params.require(:house).permit(:name, :zip_code, :address, :land_area, :building_area, :old, :price, :category, :sales_status )
+    params.require(:house).permit(:name, :zip_code, :address, :land_area, :building_area, :old, :price, :category, :sales_status, :image_id )
   end
 end

@@ -1,0 +1,23 @@
+<section class="inner">
+	<h2 class="section-ttl">オファー内容の確認</h2>
+	
+	<%= form_for(@purchase_offer, url: buyer_house_purchase_offers_path) do |f| %>
+
+	<label>住所</label>
+			<p>〒<%= @purchase_offer.zip_code %><br><%= @purchase_offer.address %></p>
+            <%= f.hidden_field :zip_code, value: @purchase_offer.zip_code %>
+			<%= f.hidden_field :address, value: @purchase_offer.address %>
+	<label>氏名</label>
+			<p><%= @purchase_offer.full_name %></p>
+            <%= f.hidden_field :first_name_kanji, value: @purchase_offer.last_name_kanji %></td>
+            <%= f.hidden_field :last_name_kanji, value: @purchase_offer.first_name_kanji %>
+            <%= f.hidden_field :first_name_kana, value: @purchase_offer.last_name_kana %>
+		    <%= f.hidden_field :last_name_kana, value: @purchase_offer.first_name_kana %>
+    <label>連絡先</label>
+			<p>〒<%= @purchase_offer.phone_number %>
+            <%= f.hidden_field :phone_number, value: @purchase_offer.phone_number %>
+			
+    <%= f.submit "オファーを確定する", class: "btn btn-primary submit_to_confirm_order" %>
+    <% end %>
+
+</section>

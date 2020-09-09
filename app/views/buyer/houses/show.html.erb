@@ -1,2 +1,65 @@
-<h1>Buyer::Houses#show</h1>
-<p>Find me in app/views/buyer/houses/show.html.erb</p>
+<div class="body-height">
+	<div class="container">
+		<h1>掲載物件詳細情報</h1>
+		  <table>
+				<tr>
+					<th>物件名</th>
+					<td><%= @house.name %></td>
+				</tr>
+				<tr>
+					<th>販売価格</th>
+					<td><%= @house.price %></td>
+				</tr>
+				<tr>
+					<th>建物種別</th>
+					<td><%= @house.category %></td>
+				</tr>
+				<tr>
+					<th>間取り</th>
+					<td><%= @house.floor_plan %></td>
+				</tr>
+				<tr>
+					<th>郵便番号</th>
+					<td><%= @house.zip_code %></td>
+				</tr>
+				<tr>
+					<th>住所</th>
+					<td><%= @house.address %></td>
+				</tr>
+				<tr>
+					<th>土地面積</th>
+					<td><%= @house.land_area %></td>
+				</tr>
+				<tr>
+					<th>建物面積</th>
+					<td><%= @house.building_area %></td>
+				</tr>
+				<tr>
+					<th>築年数</th>
+					<td><%= @house.old %></td>
+				</tr>
+			</table>
+
+			<div>見学オファー</div>
+			<%= link_to '購入オファーを申し込む', new_buyer_house_purchase_offers_path(@house), class: "btn btn-primary btn-circle pull-right" %>
+
+			<div id="map"></div>
+
+
+	  　　　　<%= link_to '掲載物件の一覧に戻る', buyer_houses_path, class: "btn btn-primary btn-circle pull-right" %>
+	</div>
+</div>
+
+
+
+<%= @results.first.coordinates %>
+
+<script>
+var MyLatLng = new google.maps.LatLng(<%= @results.first.coordinates[0] %>,<%= @results.first.coordinates[1] %>);
+var Options = {
+ zoom: 15,      //地図の縮尺値
+ center: MyLatLng,    //地図の中心座標
+ mapTypeId: 'roadmap'   //地図の種類
+};
+var map = new google.maps.Map(document.getElementById('map'), Options);
+</script>

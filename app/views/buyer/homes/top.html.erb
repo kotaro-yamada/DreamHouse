@@ -1,0 +1,8 @@
+<div>
+<%= render 'buyer/searches/search_form', q: @q %>
+</div>
+
+<h2><%= link_to 'Login', new_buyer_session_path %></h2>
+<h2><%= link_to 'Sign Up', new_buyer_registration_path %></h2>
+<h2><%= link_to 'Logout', destroy_buyer_session_path, method: :delete %></h2>
+

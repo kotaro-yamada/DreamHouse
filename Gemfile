@@ -71,3 +71,7 @@ end
 # 画像投稿機能
 gem "refile", require: "refile/rails", github: 'manfe/refile'
 gem "refile-mini_magick"
+# 検索機能
+gem 'ransack'
+
+gem 'geocoder'
