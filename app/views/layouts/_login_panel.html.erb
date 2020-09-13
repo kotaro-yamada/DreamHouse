@@ -1,0 +1,27 @@
+<span class="nav_toggle">
+    <i></i>
+    <i></i>
+    <i></i>
+</span>
+
+<nav class="toggle-menu">
+    <ul class="nav_menu_ul">
+        <% if params[:controller] == 'seller/homes' %>
+            <li class="nav_menu_li"><a href="#">
+            	<%= link_to 'Login', new_seller_session_path %></a>
+            </li>
+            <li class="nav_menu_li"><a href="#"><%= link_to 'Sign Up', new_seller_registration_path %></a>
+            </li>
+            <li class="nav_menu_li"><a href="#"><%= link_to 'Logout', destroy_seller_session_path, method: :delete %></a>
+            </li>
+        <% else %>
+            <li class="nav_menu_li"><a href="#">
+                <%= link_to 'Login', new_buyer_session_path %></a>
+            </li>
+            <li class="nav_menu_li"><a href="#"><%= link_to 'Sign Up', new_buyer_registration_path %></a>
+            </li>
+            <li class="nav_menu_li"><a href="#"><%= link_to 'Logout', destroy_buyer_session_path, method: :delete %></a>
+            </li>
+        <% end %>
+    </ul>
+</nav>

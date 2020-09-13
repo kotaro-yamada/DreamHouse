@@ -1,4 +1,4 @@
-class Seller::PhotosController < ApplicationController
+class Seller::PhotosController < Seller::ApplicationController
   def create
     @photo = Photo.new(photo_params)
     @photo.save

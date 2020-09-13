@@ -1,4 +1,4 @@
-class Seller::SellersController < ApplicationController
+class Seller::SellersController < Seller::ApplicationController
   def show
   	@seller = current_seller
   end
@@ -26,7 +26,7 @@ class Seller::SellersController < ApplicationController
     @seller.update(is_enabled: false)
     ##ログアウト
     reset_session
-    flash[:notice] = "ありがとうございました。引き続きDream Houseをよろしくお願いいたします。"
+    flash[:notice] = "休会処理を完了致しました。"
     redirect_to root_path
   end
 

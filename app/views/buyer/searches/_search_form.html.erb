@@ -1,8 +1,37 @@
-<div>
-<%= search_form_for(q, url:  buyer_search_path) do |f| %>
-    <%= f.label :'建物種別' %>
-    <%= f.radio_button :category_eq, :'戸建て', {:checked => true} %>戸建て
-    <%= f.radio_button :category_eq, :'マンション' %>マンション
-    <%= f.submit %>
-<% end %>
+<div class="container">
+	<div class="row">
+		<%= search_form_for(q, url:  buyer_search_path) do |f| %>
+		<div class="col-xl-2">
+		    <%= f.label :category_eq, '建物種別' %>
+		</div>
+		<div class="col-sm-10 btn-group" data-toggle="buttons">
+	        <label class="btn btn-outline-secondary active" style="width:50%">
+			    <%= f.radio_button :category_eq, 0, {:checked => true} %>戸建て
+			</label>
+			<label class="btn btn-outline-secondary" style="width:50%">
+			    <%= f.radio_button :category_eq, 1 %>マンション<br>
+			</label>
+	    </div><br>
+	</div>
+	<div class="row">
+		<div class="col-xl-2">
+		    <%= f.label :prefecture_id_eq, '都道府県'%>
+		</div>
+		<div class="col-sm-10 btn-group" data-toggle="buttons">
+			<label class="btn btn-outline-secondary active" style="width:50%">
+			    <%= f.collection_select :prefecture_id_eq, prefectures, :id, :name, :include_blank => '指定しない' %>
+		    </label>
+            <label class="btn btn-outline-secondary" style="width:50%">
+			    <div id='city_select' style='display:none;'>
+			        <%= f.label :city_id_eq, '市区町村'%>
+			        <%= f.collection_select :city_id_eq, cities, :id, :name, :include_blank => '指定しない' %>
+			    </div>
+		    </label>
+		</div><br>
+    <div class="row">
+    	<div class="col-xl-8" >
+		    <%= f.submit 'この条件で検索する'%>
+		<% end %>
+		</div>
+    </div>
 </div>

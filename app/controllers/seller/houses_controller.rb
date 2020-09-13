@@ -1,4 +1,4 @@
-class Seller::HousesController < ApplicationController
+class Seller::HousesController < Seller::ApplicationController
   def index
     @houses = current_seller.houses
   end

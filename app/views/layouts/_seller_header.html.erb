@@ -1,19 +1,24 @@
 <div class="container">
    <div class="row">
-	<% if seller_signed_in? %>
-	  <ul class="nav navbar-nav navbar-right">	
+	  <ul class="nav navbar-nav">	
 		<li>
-		  <%= link_to "概要", seller_top_path, class: "nav-link btn btn-success" %>
+		  <%= link_to "概要", seller_top_path %>
 		</li>
 		<li>
-		  <%= link_to '準備', seller_preparation_path, class: "nav-link btn btn-success" %>
+		  <%= link_to '準備', seller_preparation_path %>
 		</li>
 		<li>
-		  <%= link_to '安全', seller_safety_path, class: "nav-link btn btn-success" %>
+		  <%= link_to '安全', seller_safety_path %>
 		</li>
 		<li>
-		  <%= link_to '決済', seller_settlement_path, class: "nav-link btn btn-success" %>
+		  <%= link_to '決済', seller_settlement_path %>
+		</li>
+		<li>
+		  <%= link_to '掲載物件一覧', seller_houses_path %>
+		</li>
+		<li>
+		  <%= link_to 'マイページ', seller_sellers_path %>
 		</li>
 	  </ul>
-	  <% end %>
 	</div>
+</div>

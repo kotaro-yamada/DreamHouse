@@ -73,5 +73,17 @@ gem "refile", require: "refile/rails", github: 'manfe/refile'
 gem "refile-mini_magick"
 # 検索機能
 gem 'ransack'
-
+#GeogleMap API 住所を緯度経度へと変換
 gem 'geocoder'
+##デバッグ用
+gem 'pry-byebug'
+#bootstrap
+gem 'bootstrap-sass', '~> 3.3.6'
+gem 'jquery-rails'
+# Capistrano
+group :development, :test do
+  gem 'capistrano'
+  gem 'capistrano-rails'
+  gem 'capistrano3-puma'
+  gem 'capistrano-rbenv'
+end

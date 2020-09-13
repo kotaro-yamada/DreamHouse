@@ -1,0 +1,35 @@
+<h1>購入オファー一覧</h1>
+
+<% @purchase_offers do |purchase_offer| %>
+
+<%= attachment_image_tag purchase_offer.house, :image, format: 'jpg' ,size: "100x100", fallback: "no_image.jpg" %>
+<div>物件名
+	<%= purchase_offer.house.name %></div>
+	<div>販売価格
+	<%= purchase_offer.house.price %></div>								
+	<div>建物種別
+	<%= purchase_offer.house.category %></div>				
+	<div>間取り
+	<%= purchase_offer.house.floor_plan %></div>							
+	<div>郵便番号
+	〒<%= purchase_offer.house.zip_code %></div>								
+	<div>住所
+	<%= purchase_offer.house.address %></div>								
+	<div>土地面積
+	<%= purchase_offer.house.land_area %>㎡</div>							
+	<div>建物面積
+	<%= purchase_offer.house.building_area %>㎡</div>							
+	<div>築年数
+	<%= purchase_offer.house.old %>年</div>
+
+    <div>>価格
+	<%= purchase_offer.price %>年</div>
+	<div>>名前
+	<%= purchase_offer.full_name %>年</div>
+	<div>住所
+	<%= purchase_offer.full_address %>年</div>
+	<div>連絡先
+	<%= purchase_offer.phone_number %>年</div>
+
+<% end %>
+

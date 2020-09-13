@@ -1,2 +1,58 @@
-<h1>Buyer::Searches#search</h1>
-<p>Find me in app/views/buyer/searches/search.html.erb</p>
+<div class="body-height">
+	<div class="container">
+		<h1>検索結果一覧</h1>
+　　　　　
+        <% @houses.each do |house| %>
+		
+		<table class="">
+				
+				<tr>
+					<%= attachment_image_tag house, :image, format: 'jpg' ,size: "100x100", fallback: "no_image.jpg" %>
+				</tr>
+				<tr>
+					<th>物件名</th>
+					<td><%= house.name %></td>
+				</tr>
+				<tr>
+					<th>販売価格</th>
+					<td><%= house.price %></td>
+				</tr>
+				<tr>
+					<th>建物種別</th>
+					<td><%= house.category %></td>
+				</tr>
+				<tr>
+					<th>間取り</th>
+					<td><%= house.floor_plan %></td>
+				</tr>
+				<tr>
+					<th>郵便番号</th>
+					<td>〒<%= house.zip_code %></td>
+				</tr>
+				<tr>
+					<th>住所</th>
+					<td><%= house.address %></td>
+				</tr>
+				<tr>
+					<th>土地面積</th>
+					<td><%= house.land_area %>㎡</td>
+				</tr>
+				<tr>
+					<th>建物面積</th>
+					<td><%= house.building_area %>㎡</td>
+				</tr>
+				<tr>
+					<th>築年数</th>
+					<td><%= house.old %>年</td>
+				</tr>
+				<tr>
+					<<%= link_to "詳細を見る", buyer_house_path(house),  class: "btn btn-primary pull-right" %>
+				</tr>
+			</table>
+		<% end %>
+			
+			
+
+	</div>
+</div>
+

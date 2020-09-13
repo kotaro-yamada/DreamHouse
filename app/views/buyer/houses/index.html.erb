@@ -2,51 +2,51 @@
 	<div class="container">
 		<h1>掲載物件一覧</h1>
 　　　　　
-        <% @houses.each do |h| %>
+        <% @houses.each do |house| %>
 		
 		<table class="">
 				
 				<tr>
-					<%= attachment_image_tag h, :image, format: 'jpg' ,size: "100x100", fallback: "no_image.jpg" %>
+					<%= attachment_image_tag house, :image, format: 'jpg' ,size: "100x100", fallback: "no_image.jpg" %>
 				</tr>
 				<tr>
 					<th>物件名</th>
-					<td><%= h.name %></td>
+					<td><%= house.name %></td>
 				</tr>
 				<tr>
 					<th>販売価格</th>
-					<td><%= h.price %></td>
+					<td><%= house.price %></td>
 				</tr>
 				<tr>
 					<th>建物種別</th>
-					<td><%= h.category %></td>
+					<td><%= house.category %></td>
 				</tr>
 				<tr>
 					<th>間取り</th>
-					<td><%= h.floor_plan %></td>
+					<td><%= house.floor_plan %></td>
 				</tr>
 				<tr>
 					<th>郵便番号</th>
-					<td>〒<%= h.zip_code %></td>
+					<td>〒<%= house.zip_code %></td>
 				</tr>
 				<tr>
 					<th>住所</th>
-					<td><%= h.address %></td>
+					<td><%= house.address %></td>
 				</tr>
 				<tr>
 					<th>土地面積</th>
-					<td><%= h.land_area %>㎡</td>
+					<td><%= house.land_area %>㎡</td>
 				</tr>
 				<tr>
 					<th>建物面積</th>
-					<td><%= h.building_area %>㎡</td>
+					<td><%= house.building_area %>㎡</td>
 				</tr>
 				<tr>
 					<th>築年数</th>
-					<td><%= h.old %>年</td>
+					<td><%= house.old %>年</td>
 				</tr>
 				<tr>
-					<<%= link_to "詳細を見る", buyer_house_path(h),  class: "btn btn-primary pull-right" %>
+					<<%= link_to "詳細を見る", buyer_house_path(house),  class: "btn btn-primary pull-right" %>
 				</tr>
 			</table>
 		<% end %>

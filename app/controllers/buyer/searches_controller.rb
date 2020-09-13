@@ -1,4 +1,4 @@
-class Buyer::SearchesController < ApplicationController
+class Buyer::SearchesController < Buyer::ApplicationController
   def search
   	@q = House.search(search_params)
     @houses = @q.result(distinct: true)

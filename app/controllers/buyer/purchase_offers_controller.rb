@@ -1,5 +1,11 @@
-class Buyer::PurchaseOffersController < ApplicationController
+class Buyer::PurchaseOffersController < Buyer::ApplicationController
+  def index
+    @purchase_offers = current_buyer.purchase_offers.all
+  end
+  
   def show
+    @purchase_offer = PurchaseOffer.find(params[:id])
+    @house = @purchase_offer.house
   end
 
   def new
@@ -9,7 +15,7 @@ class Buyer::PurchaseOffersController < ApplicationController
 
   def confirm
     @purchase_offer = PurchaseOffer.new(purchase_offer_params)
-    @house = House.find(params[:house_id])
+    @house = House.find(params[:purchase_offer][:house_id])
     if params[:select_profile] == '0'
       @purchase_offer.house_id = @house.id
       @purchase_offer.price = @house.price
@@ -31,7 +37,7 @@ class Buyer::PurchaseOffersController < ApplicationController
   	@purchase_offer = PurchaseOffer.new(purchase_offer_params)
     @purchase_offer.save
     flash[:notice] ='購入のオファーを申し込みました！'
-    redirect_to receieve_buyer_house_purchase_offers_path
+    redirect_to buyer_purchase_receieve_path
   end
 
   def destroy

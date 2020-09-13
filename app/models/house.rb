@@ -1,6 +1,9 @@
 class House < ApplicationRecord
 	has_many :photos, dependent: :destroy
 	has_many :purchase_offers, dependent: :destroy
+	has_many :visit_offers, dependent: :destroy
+	belongs_to :prefecture
+	belongs_to :seller
 	#refile導入
 	attachment :image
 	#category

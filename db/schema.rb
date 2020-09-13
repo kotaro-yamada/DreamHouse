@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_09_182129) do
+ActiveRecord::Schema.define(version: 2020_09_12_091757) do
 
   create_table "buyers", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -31,6 +31,14 @@ ActiveRecord::Schema.define(version: 2020_09_09_182129) do
     t.index ["reset_password_token"], name: "index_buyers_on_reset_password_token", unique: true
   end
 
+  create_table "cities", force: :cascade do |t|
+    t.integer "prefecture_id"
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["prefecture_id"], name: "index_cities_on_prefecture_id"
+  end
+
   create_table "houses", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -46,8 +54,9 @@ ActiveRecord::Schema.define(version: 2020_09_09_182129) do
     t.integer "sales_status"
     t.string "image_id"
     t.integer "seller_id"
-    t.string "prefecture"
-    t.string "city"
+    t.integer "prefecture_id"
+    t.integer "city_id"
+    t.index ["prefecture_id"], name: "index_houses_on_prefecture_id"
   end
 
   create_table "photos", force: :cascade do |t|
@@ -55,6 +64,13 @@ ActiveRecord::Schema.define(version: 2020_09_09_182129) do
     t.string "image_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "prefectures", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "slug"
   end
 
   create_table "purchase_offers", force: :cascade do |t|

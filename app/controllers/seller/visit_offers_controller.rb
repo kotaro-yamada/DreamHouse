@@ -1,4 +1,4 @@
-class Seller::VisitOffersController < ApplicationController
+class Seller::VisitOffersController < Seller::ApplicationController
   def index
   end
 

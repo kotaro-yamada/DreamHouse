@@ -1,2 +1,38 @@
-<h1>Buyer::VisitOffers#new</h1>
-<p>Find me in app/views/buyer/visit_offers/new.html.erb</p>
+<div>見学オファー作成画面</div>
+
+<%= form_for(@visit_offer, url: buyer_visit_confirm_path) do |f| %>
+            <%= f.hidden_field :house_id, value: @house.id %>
+
+            <%= f.label :amount, "見学人数" %>
+            <%= f.number_field :amount, autocomplete: "amount", placeholder: "人数", class: "jpostal_code" %>
+
+			<label><%= radio_button_tag :select_profile, 0, :checked => true  %>登録済みプロフィールでオファーする</label>
+
+			<p>〒<%= current_buyer.zip_code %><%= current_buyer.address %></p>
+			<p><%= current_buyer.full_name %></p>
+
+
+			<label><%= radio_button_tag :select_profile, 1 %>新しいプロフィールでオファーする</label>
+			<div class="field">
+				<%= f.label :zip_code, "郵便番号(ハイフンなし7桁)" %>
+				<%= f.text_field :zip_code, autocomplete: "zip_code", placeholder: "郵便番号", class: "jpostal_code" %>
+			</div>
+			<div class="field">
+				<%= f.label :address, "住所(郵便番号から自動入力)" %>
+				<%= f.text_field :address, autocomplete: "address", placeholder: "住所", class: "jpostal_address" %>
+			</div>
+			<div class="field">
+				<%= f.label :phone_number, "住所(郵便番号から自動入力)" %>
+				<%= f.text_field :phone_number, autocomplete: "phone_number", placeholder: "電話番号", class: "jpostal_address" %>
+			</div>
+			<div class="field">
+				<%= f.label :first_name_kanji, "(姓)" %> <%= f.text_field :last_name_kanji, autofocus: true %></td>
+                <%= f.label :last_name_kanji, "(名)" %> <%= f.text_field :first_name_kanji %>
+                <%= f.label :first_name_kana, "(セイ)" %> <%= f.text_field :last_name_kana %>
+			    <%= f.label :last_name_kana, "(メイ)" %> <%= f.text_field :first_name_kana %>			
+			</div>
+                
+		    <%= f.submit "オファー確認画面に進む", class: "btn btn-primary submit_to_confirm_order" %>
+
+<% end %>
+

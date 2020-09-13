@@ -1,2 +1,47 @@
-<h1>Buyer::Buyers#show</h1>
-<p>Find me in app/views/buyer/buyers/show.html.erb</p>
+<div>マイページ</div>
+<p>購入オファー</p>
+<%= @purchase_offers.each do |purchase_offer| %>
+<%= attachment_image_tag purchase_offer.house, :image, format: 'jpg' ,size: "100x100", fallback: "no_image.jpg" %>
+	<div>物件名
+	<%= purchase_offer.house.name %></div>
+	<div>販売価格
+	<%= purchase_offer.house.price %></div>								
+	<div>建物種別
+	<%= purchase_offer.house.category %></div>				
+	<div>間取り
+	<%= purchase_offer.house.floor_plan %></div>							
+	<div>郵便番号
+	〒<%= purchase_offer.house.zip_code %></div>								
+	<div>住所
+	<%= purchase_offer.house.address %></div>								
+	<div>土地面積
+	<%= purchase_offer.house.land_area %>㎡</div>							
+	<div>建物面積
+	<%= purchase_offer.house.building_area %>㎡</div>							
+	<div>築年数
+	<%= purchase_offer.house.old %>年</div>
+<% end %>
+				
+<p>見学予定一覧</p>
+<%= @visit_offers.each do |visit_offer| %>
+<%= attachment_image_tag visit_offer.house, :image, format: 'jpg' ,size: "100x100", fallback: "no_image.jpg" %>
+	<div>物件名
+	<%= visit_offer.house.name %></div>
+	<div>販売価格
+	<%= visit_offer.house.price %></div>								
+	<div>建物種別
+	<%= visit_offer.house.category %></div>				
+	<div>間取り
+	<%= visit_offer.house.floor_plan %></div>							
+	<div>郵便番号
+	〒<%= visit_offer.house.zip_code %></div>								
+	<div>住所
+	<%= visit_offer.house.address %></div>								
+	<div>土地面積
+	<%= visit_offer.house.land_area %>㎡</div>							
+	<div>建物面積
+	<%= visit_offer.house.building_area %>㎡</div>							
+	<div>築年数
+	<%= visit_offer.house.old %>年</div>
+<% end %>
+<p>チェックリスト</p>

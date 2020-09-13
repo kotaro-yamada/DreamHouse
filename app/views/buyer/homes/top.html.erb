@@ -1,5 +1,10 @@
 <div>
-<%= render 'buyer/searches/search_form', q: @q %>
+<%= render 'layouts/login_panel' %>
+</div>
+
+
+<div>
+<%= render 'buyer/searches/search_form', q: @q, prefectures: @prefectures, cities: @cities %>
 </div>
 
 <h2><%= link_to 'Login', new_buyer_session_path %></h2>
