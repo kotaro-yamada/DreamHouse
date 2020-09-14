@@ -5,6 +5,15 @@ class Seller < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :houses, dependent: :destroy
 
+  validates :last_name_kanji, presence: true
+  validates :first_name_kanji, presence: true
+  validates :last_name_kana, presence: true
+  validates :first_name_kana, presence: true
+  validates :zip_code, presence: true
+  validates :address, presence: true
+  validates :phone_number, presence: true
+
+
   def full_name
     last_name_kanji + " " + first_name_kanji
   end

@@ -2,23 +2,23 @@
 <p>購入オファー</p>
 <%= @purchase_offers.each do |purchase_offer| %>
 <%= attachment_image_tag purchase_offer.house, :image, format: 'jpg' ,size: "100x100", fallback: "no_image.jpg" %>
-	<div>物件名
+	<div><label>物件名</label>
 	<%= purchase_offer.house.name %></div>
-	<div>販売価格
+	<div><label>販売価格</label>
 	<%= purchase_offer.house.price %></div>								
-	<div>建物種別
+	<div><label>建物種別</label>
 	<%= purchase_offer.house.category %></div>				
-	<div>間取り
+	<div><label>間取り</label>
 	<%= purchase_offer.house.floor_plan %></div>							
-	<div>郵便番号
+	<div><label>郵便番号</label>
 	〒<%= purchase_offer.house.zip_code %></div>								
-	<div>住所
+	<div><label>住所</label>
 	<%= purchase_offer.house.address %></div>								
-	<div>土地面積
+	<div><label>土地面積</label>
 	<%= purchase_offer.house.land_area %>㎡</div>							
-	<div>建物面積
+	<div><label>建物面積</label>
 	<%= purchase_offer.house.building_area %>㎡</div>							
-	<div>築年数
+	<div><label>築年数</label>
 	<%= purchase_offer.house.old %>年</div>
 <% end %>
 				

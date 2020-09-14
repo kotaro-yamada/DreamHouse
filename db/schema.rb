@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_12_091757) do
+ActiveRecord::Schema.define(version: 2020_09_13_190055) do
 
   create_table "buyers", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -20,19 +20,19 @@ ActiveRecord::Schema.define(version: 2020_09_12_091757) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "last_name_kanji"
-    t.string "first_name_kanji"
-    t.string "last_name_kana"
-    t.string "first_name_kana"
-    t.string "zip_code"
-    t.string "address"
-    t.string "phone_number"
+    t.string "last_name_kanji", null: false
+    t.string "first_name_kanji", null: false
+    t.string "last_name_kana", null: false
+    t.string "first_name_kana", null: false
+    t.string "zip_code", null: false
+    t.string "address", null: false
+    t.string "phone_number", null: false
     t.index ["email"], name: "index_buyers_on_email", unique: true
     t.index ["reset_password_token"], name: "index_buyers_on_reset_password_token", unique: true
   end
 
   create_table "cities", force: :cascade do |t|
-    t.integer "prefecture_id"
+    t.integer "prefecture_id", null: false
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -43,50 +43,50 @@ ActiveRecord::Schema.define(version: 2020_09_12_091757) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "name"
-    t.string "price"
-    t.string "zip_code"
-    t.string "address"
-    t.integer "category"
-    t.integer "floor_plan"
+    t.integer "price", null: false
+    t.string "zip_code", null: false
+    t.string "address", null: false
+    t.integer "category", default: 0, null: false
+    t.integer "floor_plan", default: 0
     t.integer "old"
     t.string "land_area"
     t.string "building_area"
-    t.integer "sales_status"
+    t.integer "sales_status", default: 0, null: false
     t.string "image_id"
-    t.integer "seller_id"
+    t.integer "seller_id", null: false
     t.integer "prefecture_id"
-    t.integer "city_id"
+    t.integer "city_id", null: false
     t.index ["prefecture_id"], name: "index_houses_on_prefecture_id"
   end
 
   create_table "photos", force: :cascade do |t|
-    t.integer "house_id"
-    t.string "image_id"
+    t.integer "house_id", null: false
+    t.integer "image_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "prefectures", force: :cascade do |t|
-    t.string "name"
+    t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "slug"
   end
 
   create_table "purchase_offers", force: :cascade do |t|
-    t.integer "buyer_id"
-    t.integer "house_id"
-    t.integer "price"
-    t.integer "order_status"
+    t.integer "buyer_id", null: false
+    t.integer "house_id", null: false
+    t.integer "price", null: false
+    t.integer "order_status", default: 0, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "zip_code"
-    t.string "address"
-    t.string "phone_number"
-    t.string "first_name_kanji"
-    t.string "last_name_kanji"
-    t.string "first_name_kana"
-    t.string "last_name_kana"
+    t.string "zip_code", null: false
+    t.string "address", null: false
+    t.string "phone_number", null: false
+    t.string "first_name_kanji", null: false
+    t.string "last_name_kanji", null: false
+    t.string "first_name_kana", null: false
+    t.string "last_name_kana", null: false
   end
 
   create_table "sellers", force: :cascade do |t|
@@ -97,29 +97,29 @@ ActiveRecord::Schema.define(version: 2020_09_12_091757) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "last_name_kanji"
-    t.string "first_name_kanji"
-    t.string "last_name_kana"
-    t.string "first_name_kana"
-    t.string "zip_code"
-    t.string "address"
-    t.string "phone_number"
+    t.string "last_name_kanji", null: false
+    t.string "first_name_kanji", null: false
+    t.string "last_name_kana", null: false
+    t.string "first_name_kana", null: false
+    t.string "zip_code", null: false
+    t.string "address", null: false
+    t.string "phone_number", null: false
     t.index ["email"], name: "index_sellers_on_email", unique: true
     t.index ["reset_password_token"], name: "index_sellers_on_reset_password_token", unique: true
   end
 
   create_table "visit_offers", force: :cascade do |t|
-    t.integer "house_id"
-    t.integer "buyer_id"
+    t.integer "house_id", null: false
+    t.integer "buyer_id", null: false
     t.integer "amount"
-    t.integer "order_status"
-    t.string "last_name_kanji"
-    t.string "first_name_kanji"
-    t.string "last_name_kana"
-    t.string "first_name_kana"
-    t.string "zip_code"
-    t.string "address"
-    t.string "phone_number"
+    t.integer "order_status", default: 0, null: false
+    t.string "last_name_kanji", null: false
+    t.string "first_name_kanji", null: false
+    t.string "last_name_kana", null: false
+    t.string "first_name_kana", null: false
+    t.string "zip_code", null: false
+    t.string "address", null: false
+    t.string "phone_number", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

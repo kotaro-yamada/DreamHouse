@@ -8,16 +8,17 @@
 		    	<li>
 			    	<%= link_to '物件一覧', buyer_houses_path %>
 			  	</li>
+			  	<li>
+			    	<%= link_to 'TOPページ', root_path %>
+		    	</li>
+
+		    	<% if buyer_signed_in? %>
 		      	<li>
 			    	<%= link_to "マイページ", buyer_buyers_path %>
 			  	</li>
-			  	<li>
-			    	<%= link_to 'TOPページへ戻る', root_path %>
-		    	</li>
+			    <% end %>
 				<!--注目リストを作成予定-->
-				<li>
-				    <%= link_to 'ログアウト', destroy_buyer_session_path, method: :delete %>
-			    </li>
+			
 		    </ul>
 		</div>
 	</div>

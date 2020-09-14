@@ -13,12 +13,18 @@
 		<li>
 		  <%= link_to '決済', seller_settlement_path %>
 		</li>
+
+        <!--ログインユーザーへの追加選択肢-->
+		<% if seller_signed_in? %>
 		<li>
 		  <%= link_to '掲載物件一覧', seller_houses_path %>
 		</li>
 		<li>
 		  <%= link_to 'マイページ', seller_sellers_path %>
 		</li>
+		<% end %>
+　　　　　<!--ログインユーザーへの追加選択肢-->
+
 	  </ul>
 	</div>
 </div>

@@ -18,28 +18,28 @@
 //= require jquery.min.js
 //= require_tree .
 
-$(document).ready(function(){
+//$(document).ready(function(){
   // NOTE: ブラウザバック時挙動がおかしくなるので要修正
   // id = q_prefecture_id_eq な要素群を持ってくる
-  let prefectureSelect = document.getElementById('q_prefecture_id_eq')
-  if(prefectureSelect) {
+  //let prefectureSelect = document.getElementById('q_prefecture_id_eq')
+  //if(prefectureSelect) {
       // 持ってきた要素群の値が変化(=change)したら処理を行う
-    prefectureSelect.addEventListener('change', function(){
+   // prefectureSelect.addEventListener('change', function(){
     // 持ってきた要素群のうち選択された要素(=東京などの)value(=13 ,14 ,15 ..)を取得する
-    let prefectureId =  prefectureSelect.selectedIndex
+   // let prefectureId =  prefectureSelect.selectedIndex
     // id = city_select な要素群を持ってくる
-    let cityElement = document.getElementById('city_select')
+   // let cityElement = document.getElementById('city_select')
     // 東京の場合は表示する
     // 東京以外の場合は非表示にする
-    if ( prefectureId == 13 ) {
+   // if ( prefectureId == 13 ) {
       // 改行なしで表示
-      cityElement.style.display = 'inline'
-    } else {
-      cityElement.style.display = 'none'
-    }
-  })
-  }
-});
+      //cityElement.style.display = 'inline'
+   // } else {
+     // cityElement.style.display = 'none'
+    //}
+  //})
+ // }
+//});
 //　ログインパネル　上記JSと分離して記述
 // turbolinks:loadで毎回のページ読み込みを追記
 $(document).on('turbolinks:load', function() {

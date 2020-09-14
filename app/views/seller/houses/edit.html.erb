@@ -7,7 +7,11 @@
 		<div class="form-group">
 			<%= f.label "建物名" %><%= f.text_field :name, class: "form-control" %>
 			<%= f.label "郵便番号" %><%= f.text_area :zip_code, class: "form-control" %>
-			<%= f.label "住所" %><%= f.text_area :address, class: "form-control" %>
+			<%= f.label '都道府県'%>
+			<%= f.collection_select :prefecture_id, @prefectures, :id, :name, :include_blank => '必ず指定してください' %>
+			<%= f.label '市区町村'%>
+			<%= f.collection_select :city_id, @cities, :id, :name, :include_blank => '必ず指定してください' %>
+			<%= f.label "町名・番地" %><%= f.text_area :address, class: "form-control" %>
 			<%= f.label "土地面積" %><%= f.number_field :land_area, class: "form-horizontal" %>円
 			<%= f.label "建物面積" %><%= f.number_field :building_area, class: "form-horizontal" %>円
 			<%= f.label "建物種別" %><%= f.select :category, [["戸建て", "戸建て"], ["マンション", "マンション"]], { include_blank: '選択してください'}, { class: 'form-control' , required: true } %>
