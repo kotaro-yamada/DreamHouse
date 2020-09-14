@@ -1,6 +1,6 @@
 <div>マイページ</div>
 <p>購入オファー</p>
-<%= @purchase_offers.each do |purchase_offer| %>
+<% @purchase_offers.each do |purchase_offer| %>
 <%= attachment_image_tag purchase_offer.house, :image, format: 'jpg' ,size: "100x100", fallback: "no_image.jpg" %>
 	<div><label>物件名</label>
 	<%= purchase_offer.house.name %></div>
@@ -23,7 +23,7 @@
 <% end %>
 				
 <p>見学予定一覧</p>
-<%= @visit_offers.each do |visit_offer| %>
+<% @visit_offers.each do |visit_offer| %>
 <%= attachment_image_tag visit_offer.house, :image, format: 'jpg' ,size: "100x100", fallback: "no_image.jpg" %>
 	<div>物件名
 	<%= visit_offer.house.name %></div>
