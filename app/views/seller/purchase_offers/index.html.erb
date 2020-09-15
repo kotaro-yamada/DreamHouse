@@ -1,36 +1,38 @@
-<div>>購入オファー一覧</div>
+<div>購入オファー全物件一覧</div>
 
 <% @houses.each do |house| %>
 
-<%= attachment_image_tag house, :image, format: 'jpg' ,size: "100x100", fallback: "no_image.jpg" %>
-<div>物件名
-	<%= house.name %></div>
-	<div>販売価格
-	<%= house.price %></div>								
-	<div>建物種別
-	<%= house.category %></div>				
-	<div>間取り
-	<%= house.floor_plan %></div>							
-	<div>郵便番号
-	〒<%= house.zip_code %></div>								
-	<div>住所
-	<%= house.address %></div>								
-	<div>土地面積
-	<%= house.land_area %>㎡</div>							
-	<div>建物面積
-	<%= house.building_area %>㎡</div>							
-	<div>築年数
-	<%= house.old %>年</div>
+	<%= attachment_image_tag house, :image, format: 'jpg' ,size: "100x100", fallback: "no_image.jpg" %>
+	<div>物件名
+		<%= house.name %></div>
+		<div>販売価格
+		<%= house.price %></div>								
+		<div>建物種別
+		<%= house.category %></div>				
+		<div>間取り
+		<%= house.floor_plan %></div>							
+		<div>郵便番号
+		〒<%= house.zip_code %></div>								
+		<div>住所
+		<%= house.address %></div>								
+		<div>土地面積
+		<%= house.land_area %>㎡</div>							
+		<div>建物面積
+		<%= house.building_area %>㎡</div>							
+		<div>築年数
+		<%= house.old %>年</div>
+		
+        <div>本物件の購入オファー一覧</div>
+	<% house.purchase_offers.each do |purchase_offer| %>    
+	    <div>>価格
+		<%= purchase_offer.price %>年</div>
+		<div>>名前
+		<%= purchase_offer.full_name %>年</div>
+		<div>住所
+		<%= purchase_offer.full_address %>年</div>
+		<div>連絡先
+		<%= purchase_offer.phone_number %>年</div>
 
-<% house.purchase_offers each do |purchase_offer| %>
+	<% end %>
     
-    <div>>価格
-	<%= purchase_offer.price %>年</div>
-	<div>>名前
-	<%= purchase_offer.full_name %>年</div>
-	<div>住所
-	<%= purchase_offer.full_address %>年</div>
-	<div>連絡先
-	<%= purchase_offer.phone_number %>年</div>
-
 <% end %>

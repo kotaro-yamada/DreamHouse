@@ -1,6 +1,7 @@
 class Seller::SellersController < Seller::ApplicationController
   def show
   	@seller = current_seller
+    @houses = @seller.houses
   end
 
   def edit

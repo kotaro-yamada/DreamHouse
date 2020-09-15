@@ -1,6 +1,6 @@
 <div>購入オファー作成画面</div>
 
-<%= form_for(@purchase_offer, url: buyer_purchase_confirm_path) do |f| %>
+<%= form_for(@purchase_offer, url: buyer_purchase_confirm_path, method: :post) do |f| %>
             <%= f.hidden_field :house_id, value: @house.id %>
 
 			<label><%= radio_button_tag :select_profile, 0, :checked => true  %>登録済みプロフィールでオファーする</label>

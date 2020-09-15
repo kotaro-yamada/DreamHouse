@@ -1,2 +1,30 @@
-<h1>Seller::VisitOffers#show</h1>
-<p>Find me in app/views/seller/visit_offers/show.html.erb</p>
+<h1>見学オファーの詳細情報</h1>
+
+<%= attachment_image_tag @house, :image, format: 'jpg' ,size: "100x100", fallback: "no_image.jpg" %>
+<div>物件名
+	<%= @house.name %></div>
+	<div>販売価格
+	<%= @house.price %></div>								
+	<div>建物種別
+	<%= @house.category %></div>				
+	<div>間取り
+	<%= @house.floor_plan %></div>							
+	<div>郵便番号
+	〒<%= @house.zip_code %></div>								
+	<div>住所
+	<%= @house.address %></div>								
+	<div>土地面積
+	<%= @house.land_area %>㎡</div>							
+	<div>建物面積
+	<%= @house.building_area %>㎡</div>							
+	<div>築年数
+	<%= @house.old %>年</div>
+
+<div>>価格
+	<%= @visit_offer.price %>年</div>
+	<div>>名前
+	<%= @visit_offer.full_name %>年</div>
+	<div>住所
+	<%= @visit_offer.full_address %>年</div>
+	<div>連絡先
+	<%= @visit_offer.phone_number %>年</div>

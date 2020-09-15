@@ -1,6 +1,6 @@
 class Seller::PurchaseOffersController < Seller::ApplicationController
   def index
-  	@houses = Seller.houses.all
+  	@houses = current_seller.houses
   end
 
   def show

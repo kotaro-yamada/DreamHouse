@@ -32,10 +32,11 @@
 			<td><%= current_seller.email %></td>
 		</tr>
 	</table>
-	<h4><p><strong>オファーを見る</strong>
-		<!--<%= link_to 'オファーを見る', deliveries_path,class: "mypage btn btn-primary" %></p></h4>-->
+	<h4><p><strong>オファーを見る</strong><br>
+		<%= link_to '購入オファーの一覧を見る', seller_purchase_offers_path(@houses),　class: "mypage btn btn-primary" %><br>
+		<%= link_to '見学オファーの一覧を見る', seller_visit_offers_path(@houses),　class: "mypage btn btn-primary" %>
+	</p></h4>
 	<h4><p><strong>メッセージを見る</strong>
-		<!--<%= link_to 'オファーを見る', order_details_path,class: "mypage btn btn-primary" %></p></h4>-->
 </div>
 </div>
 </div>

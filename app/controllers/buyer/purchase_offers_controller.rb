@@ -16,6 +16,7 @@ class Buyer::PurchaseOffersController < Buyer::ApplicationController
   def confirm
     @purchase_offer = PurchaseOffer.new(purchase_offer_params)
     @house = House.find(params[:purchase_offer][:house_id])
+    binding.pry
     if params[:select_profile] == '0'
       @purchase_offer.house_id = @house.id
       @purchase_offer.price = @house.price
@@ -41,6 +42,13 @@ class Buyer::PurchaseOffersController < Buyer::ApplicationController
   end
 
   def destroy
+    purchase_offer = PurchaseOffer.find(params[:id])
+    if purchase_offer.destroy
+      flash[:notice] = "購入オファーを削除しました。"
+      redirect_to　buyer_purchase_offers_path
+    else
+      render action: :show
+    end
   end
 
   def receive

@@ -16,7 +16,6 @@ class Seller::HousesController < Seller::ApplicationController
   def create
     @house = House.new(house_params)
     @house.seller_id = current_seller.id
-    binding.pry
     if @house.save!
       flash[:notice] ='物件を新規登録しました'
       redirect_to seller_houses_path
@@ -35,7 +34,7 @@ class Seller::HousesController < Seller::ApplicationController
   def update
     @house = House.find(params[:id])
     if @house.update(house_params)
-      redirect_to seller_houses_show(@house)
+      redirect_to seller_house_path(@house)
       flash[:notice] ='物件情報を更新しました'
     else
       render :edit

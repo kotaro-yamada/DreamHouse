@@ -43,6 +43,13 @@ class Buyer::VisitOffersController < Buyer::ApplicationController
   end
 
   def destroy
+    visit_offer = VisitOffer.find(params[:id])
+    if visit_offer.destroy
+      flash[:notice] = "見学オファーを削除しました。"
+      redirect_to　buyer_visit_offers_path
+    else
+      render action: :show
+    end
   end
 
   private

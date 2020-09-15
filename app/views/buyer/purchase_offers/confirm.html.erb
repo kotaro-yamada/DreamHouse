@@ -1,7 +1,7 @@
 <section class="inner">
 	<h2 class="section-ttl">購入オファー内容の確認</h2>
 	
-	<%= form_for(@purchase_offer, url: buyer_house_purchase_offers_path(@house)) do |f| %>
+	<%= form_for(@purchase_offer, url: buyer_house_purchase_offer_path(@house.id), method: :post) do |f| %>
 
 	<label>住所</label>
 			<p>〒<%= @purchase_offer.zip_code %><br><%= @purchase_offer.address %></p>
