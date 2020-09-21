@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  visit_offer_id: 1
+  first_choice: 2020-09-19 16:33:15
+  second_choice: 2020-09-19 16:33:15
+  third_choice: 2020-09-19 16:33:15
+
+two:
+  visit_offer_id: 1
+  first_choice: 2020-09-19 16:33:15
+  second_choice: 2020-09-19 16:33:15
+  third_choice: 2020-09-19 16:33:15

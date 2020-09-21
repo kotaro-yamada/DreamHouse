@@ -1,11 +1,11 @@
 <section class="inner">
 	<h2 class="section-ttl">購入オファー内容の確認</h2>
-	
+
 	<%= form_for(@purchase_offer, url: buyer_house_purchase_offer_path(@house.id), method: :post) do |f| %>
 
 	<label>住所</label>
-			<p>〒<%= @purchase_offer.zip_code %><br><%= @purchase_offer.address %></p>
-            <%= f.hidden_field :zip_code, value: @purchase_offer.zip_code %>
+			<p>〒<%= @purchase_offer.postcode %><br><%= @purchase_offer.address %></p>
+            <%= f.hidden_field :postcode, value: @purchase_offer.postcode %>
 			<%= f.hidden_field :address, value: @purchase_offer.address %>
 	<label>氏名</label>
 			<p><%= @purchase_offer.full_name %></p>
@@ -16,7 +16,7 @@
     <label>連絡先</label>
 			<p>〒<%= @purchase_offer.phone_number %>
             <%= f.hidden_field :phone_number, value: @purchase_offer.phone_number %>
-			
+
     <%= f.submit "オファーを確定する", class: "btn btn-primary submit_to_confirm_order" %>
     <% end %>
 

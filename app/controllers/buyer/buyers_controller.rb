@@ -36,7 +36,7 @@ class Buyer::BuyersController < Buyer::ApplicationController
 
   private
   def buyer_params
-    params.require(:buyer).permit(:last_name_kanji, :first_name_kanji, :last_name_kana, :first_name_kana, :zip_code, :address, :phone_number, :email)
+    params.require(:buyer).permit(:last_name_kanji, :first_name_kanji, :last_name_kana, :first_name_kana, :postcode, :address, :phone_number, :email)
   end
 
 end

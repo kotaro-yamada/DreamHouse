@@ -9,7 +9,7 @@ class CreateVisitOffers < ActiveRecord::Migration[5.2]
       t.string :first_name_kanji
       t.string :last_name_kana
       t.string :first_name_kana
-      t.string :zip_code
+      t.string :postcode
       t.string :address
       t.string :phone_number
 

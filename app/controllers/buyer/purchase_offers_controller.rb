@@ -2,7 +2,7 @@ class Buyer::PurchaseOffersController < Buyer::ApplicationController
   def index
     @purchase_offers = current_buyer.purchase_offers.all
   end
-  
+
   def show
     @purchase_offer = PurchaseOffer.find(params[:id])
     @house = @purchase_offer.house
@@ -20,7 +20,7 @@ class Buyer::PurchaseOffersController < Buyer::ApplicationController
     if params[:select_profile] == '0'
       @purchase_offer.house_id = @house.id
       @purchase_offer.price = @house.price
-      @purchase_offer.zip_code = current_buyer.zip_code
+      @purchase_offer.postcode = current_buyer.postcode
       @purchase_offer.address = current_buyer.address
       @purchase_offer.phone_number = current_buyer.phone_number
       @purchase_offer.first_name_kanji = current_buyer.first_name_kanji
@@ -56,6 +56,6 @@ class Buyer::PurchaseOffersController < Buyer::ApplicationController
 
   private
   def purchase_offer_params
-    params.require(:purchase_offer).permit(:buyer_id, :house_id, :price, :order_status, :zip_code, :address, :phone_number, :first_name_kanji, :last_name_kanji, :first_name_kana, :last_name_kana)
+    params.require(:purchase_offer).permit(:buyer_id, :house_id, :price, :order_status, :postcode, :address, :phone_number, :first_name_kanji, :last_name_kanji, :first_name_kana, :last_name_kana)
   end
 end

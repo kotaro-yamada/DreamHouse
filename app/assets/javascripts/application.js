@@ -17,6 +17,8 @@
 //= require bootstrap-sprockets
 //= require jquery.min.js
 //= require_tree .
+//= require moment
+//= require fullcalendar
 
 //$(document).ready(function(){
   // NOTE: ブラウザバック時挙動がおかしくなるので要修正
@@ -45,5 +47,27 @@
 $(document).on('turbolinks:load', function() {
   $('.nav_toggle').on('click', function () {
       $('.nav_toggle, .toggle-menu').toggleClass('show');
-  });  
+  });
 })
+
+/*fullcalendar*/
+$(function () {
+  $(document).on('turbolinks:load', function () {
+      function eventCalendar() {
+          return $('#calendar').fullCalendar({});
+      };
+      function clearCalendar() {
+          $('#calendar').html('');
+      };
+      $(document).on('turbolinks:load', function () {
+        eventCalendar();
+      });
+      $(document).on('turbolinks:before-cache', clearCalendar);
+
+      $('#calendar').fullCalendar({
+        houses: '/show.json'
+      });
+    }
+  });
+});
+

@@ -3,9 +3,9 @@
 		<h1>掲載物件一覧</h1>
 　　　　　
         <% @houses.each do |house| %>
-		
+
 		<table class="">
-				
+
 				<tr>
 					<%= attachment_image_tag house, :image, format: 'jpg' ,size: "100x100", fallback: "no_image.jpg" %>
 				</tr>
@@ -27,7 +27,7 @@
 				</tr>
 				<tr>
 					<th>郵便番号</th>
-					<td>〒<%= house.zip_code %></td>
+					<td>〒<%= house.postcode %></td>
 				</tr>
 				<tr>
 					<th>住所</th>
@@ -50,8 +50,8 @@
 				</tr>
 			</table>
 		<% end %>
-			
-			
+
+
 
 	</div>
 </div>

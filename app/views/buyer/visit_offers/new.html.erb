@@ -8,14 +8,14 @@
 
 			<label><%= radio_button_tag :select_profile, 0, :checked => true  %>登録済みプロフィールでオファーする</label>
 
-			<p>〒<%= current_buyer.zip_code %><%= current_buyer.address %></p>
+			<p>〒<%= current_buyer.postcode %><%= current_buyer.address %></p>
 			<p><%= current_buyer.full_name %></p>
 
 
 			<label><%= radio_button_tag :select_profile, 1 %>新しいプロフィールでオファーする</label>
 			<div class="field">
-				<%= f.label :zip_code, "郵便番号(ハイフンなし7桁)" %>
-				<%= f.text_field :zip_code, autocomplete: "zip_code", placeholder: "郵便番号", class: "jpostal_code" %>
+				<%= f.label :postcode, "郵便番号(ハイフンなし7桁)" %>
+				<%= f.text_field :postcode, autocomplete: "postcode", placeholder: "郵便番号", class: "jpostal_code" %>
 			</div>
 			<div class="field">
 				<%= f.label :address, "住所(郵便番号から自動入力)" %>
@@ -29,9 +29,9 @@
 				<%= f.label :first_name_kanji, "(姓)" %> <%= f.text_field :last_name_kanji, autofocus: true %></td>
                 <%= f.label :last_name_kanji, "(名)" %> <%= f.text_field :first_name_kanji %>
                 <%= f.label :first_name_kana, "(セイ)" %> <%= f.text_field :last_name_kana %>
-			    <%= f.label :last_name_kana, "(メイ)" %> <%= f.text_field :first_name_kana %>			
+			    <%= f.label :last_name_kana, "(メイ)" %> <%= f.text_field :first_name_kana %>
 			</div>
-                
+
 		    <%= f.submit "オファー確認画面に進む", class: "btn btn-primary submit_to_confirm_order" %>
 
 <% end %>

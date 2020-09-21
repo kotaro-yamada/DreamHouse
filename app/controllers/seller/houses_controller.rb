@@ -46,6 +46,6 @@ class Seller::HousesController < Seller::ApplicationController
 
   private
   def house_params
-    params.require(:house).permit(:name, :zip_code, :address, :land_area, :building_area, :old, :price, :category, :sales_status, :image, :prefecture_id, :city_id, :seller_id )
+    params.require(:house).permit(:name, :postcode, :address, :land_area, :building_area, :old, :price, :category, :sales_status, :image, :prefecture_id, :city_id, :seller_id )
   end
 end

@@ -4,7 +4,7 @@
 　　　　　<!--each文で回す予定-->
         <% @houses.each do |h| %>
 		<!--Photo欄を作成すること-->
-		
+
 			<table>
 				<%= attachment_image_tag h, :image, format: 'jpg' ,size: "100x100", fallback: "no_image.jpg" %>
 				<tr>
@@ -25,7 +25,7 @@
 				</tr>
 				<tr>
 					<th>郵便番号</th>
-					<td><%= h.zip_code %></td>
+					<td><%= h.postcode %></td>
 				</tr>
 				<tr>
 					<th>住所</th>
@@ -52,7 +52,7 @@
 			<%= link_to '+掲載を取りやめる', seller_house_path(h), method: :delete, class: "btn btn-primary btn-circle pull-right" %>
 
 			<% end %>
-			
+
       </div><br>
 	  <%= link_to '+掲載物件を追加する', new_seller_house_path, class: "btn btn-primary btn-circle pull-right" %>
 </div>

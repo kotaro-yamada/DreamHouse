@@ -87,3 +87,8 @@ group :development, :test do
   gem 'capistrano3-puma'
   gem 'capistrano-rbenv'
 end
+# jpostalとjp_prefectureを用いた住所検索
+gem 'jp_prefecture'
+#fullcalendar
+gem 'fullcalendar-rails'
+gem 'momentjs-rails'

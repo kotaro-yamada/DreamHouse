@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_13_190055) do
+ActiveRecord::Schema.define(version: 2020_09_19_163315) do
 
   create_table "buyers", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -24,9 +24,12 @@ ActiveRecord::Schema.define(version: 2020_09_13_190055) do
     t.string "first_name_kanji", null: false
     t.string "last_name_kana", null: false
     t.string "first_name_kana", null: false
-    t.string "zip_code", null: false
-    t.string "address", null: false
-    t.string "phone_number", null: false
+    t.integer "postcode"
+    t.integer "prefecture_code"
+    t.string "address_city"
+    t.string "address_street"
+    t.string "address_building"
+    t.string "phone_number"
     t.index ["email"], name: "index_buyers_on_email", unique: true
     t.index ["reset_password_token"], name: "index_buyers_on_reset_password_token", unique: true
   end
@@ -44,7 +47,7 @@ ActiveRecord::Schema.define(version: 2020_09_13_190055) do
     t.datetime "updated_at", null: false
     t.string "name"
     t.integer "price", null: false
-    t.string "zip_code", null: false
+    t.string "postcode", null: false
     t.string "address", null: false
     t.integer "category", default: 0, null: false
     t.integer "floor_plan", default: 0
@@ -73,6 +76,15 @@ ActiveRecord::Schema.define(version: 2020_09_13_190055) do
     t.string "slug"
   end
 
+  create_table "preperred_dates", force: :cascade do |t|
+    t.integer "visit_offer_id", null: false
+    t.datetime "first_choice"
+    t.datetime "second_choice"
+    t.datetime "third_choice"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "purchase_offers", force: :cascade do |t|
     t.integer "buyer_id", null: false
     t.integer "house_id", null: false
@@ -80,7 +92,7 @@ ActiveRecord::Schema.define(version: 2020_09_13_190055) do
     t.integer "order_status", default: 0, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "zip_code", null: false
+    t.string "postcode", null: false
     t.string "address", null: false
     t.string "phone_number", null: false
     t.string "first_name_kanji", null: false
@@ -101,9 +113,12 @@ ActiveRecord::Schema.define(version: 2020_09_13_190055) do
     t.string "first_name_kanji", null: false
     t.string "last_name_kana", null: false
     t.string "first_name_kana", null: false
-    t.string "zip_code", null: false
-    t.string "address", null: false
-    t.string "phone_number", null: false
+    t.integer "postcode"
+    t.integer "prefecture_code"
+    t.string "address_city"
+    t.string "address_street"
+    t.string "address_building"
+    t.string "phone_number"
     t.index ["email"], name: "index_sellers_on_email", unique: true
     t.index ["reset_password_token"], name: "index_sellers_on_reset_password_token", unique: true
   end
@@ -117,7 +132,7 @@ ActiveRecord::Schema.define(version: 2020_09_13_190055) do
     t.string "first_name_kanji", null: false
     t.string "last_name_kana", null: false
     t.string "first_name_kana", null: false
-    t.string "zip_code", null: false
+    t.string "postcode", null: false
     t.string "address", null: false
     t.string "phone_number", null: false
     t.datetime "created_at", null: false

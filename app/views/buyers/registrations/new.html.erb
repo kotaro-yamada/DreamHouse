@@ -1,4 +1,4 @@
-div class="container">
+<div class="container">
   <div class="row">
      <br><br><br><br>
       <h2 class="red-border px-3">新規会員登録</h2>
@@ -15,13 +15,28 @@ div class="container">
             </div>
 
             <div class="form-group">
-              <%= f.label :郵便番号, class: "brown-border px-3" %>
-              <%= f.text_field :zip_code, placeholder:"例）1510001", class: "form-control offset-1 col-11" %>
+            　　<%= f.label :postcode, '郵便番号' %>
+            　　<%= f.text_field :postcode, autocomplete: 'postcode', class: 'form-control' %>
+            </div>
+
+　　　　　　　<div class="form-group">
+                    <%= f.label :prefecture_name, '都道府県' %>
+                    <%= f.collection_select :prefecture_code, JpPrefecture::Prefecture.all, :code, :name, { prompt: '選択してください' }, class: 'form-control' %>
             </div>
 
             <div class="form-group">
-              <%= f.label :住所, placeholder:"例）東京都足立区○○", class: "brown-border px-3" %>
-              <%= f.text_field :address, placeholder:"例）東京都足立区○○", class: "form-control offset-1 col-11" %>
+                    <%= f.label :address_city, '市区町村' %>
+                    <%= f.text_field :address_city, autocomplete: 'address_city', class: 'form-control' %>
+            </div>
+
+            <div class="form-group">
+                    <%= f.label :address_street, '番地' %>
+                    <%= f.text_field :address_street, autocomplete: 'address_street', class: 'form-control' %>
+            </div>
+
+            <div class="form-group">
+                    <%= f.label :address_building, '建物' %>
+                    <%= f.text_field :address_building, autocomplete: 'address_building', class: 'form-control' %>
             </div>
 
             <div class="form-group">

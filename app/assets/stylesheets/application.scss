@@ -12,11 +12,12 @@
  *
  *= require_tree .
  *= require_self
+ *= require fullcalendar
  */
 
 /*bootstrap*/
-@import "bootstrap-sprockets";  
-@import "bootstrap";  
+@import "bootstrap-sprockets";
+@import "bootstrap";
 
 /*_login_panel*/
 .nav_toggle {

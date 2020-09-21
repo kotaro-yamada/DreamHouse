@@ -4,7 +4,7 @@ class ChangeColumnsToPurchaseOffers < ActiveRecord::Migration[5.2]
   	 change_column :purchase_offers, :house_id, :integer, null: false
   	 change_column :purchase_offers, :price, :integer, null: false
   	 change_column :purchase_offers, :order_status, :integer, null: false, default: 0
-  	 change_column :purchase_offers, :zip_code, :string, null: false
+  	 change_column :purchase_offers, :postcode, :string, null: false
      change_column :purchase_offers, :address, :string, null: false
      change_column :purchase_offers, :phone_number, :string, null: false
      change_column :purchase_offers, :first_name_kanji, :string, null: false

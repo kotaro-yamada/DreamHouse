@@ -1,4 +1,6 @@
 class VisitOffer < ApplicationRecord
+	has_one :preperred_date
+	accepts_nested_attributes_for :preperred_date
 	belongs_to :house
 	belongs_to :buyer
 

@@ -6,24 +6,24 @@
 	<div>物件名
 		<%= house.name %></div>
 		<div>販売価格
-		<%= house.price %></div>								
+		<%= house.price %></div>
 		<div>建物種別
-		<%= house.category %></div>				
+		<%= house.category %></div>
 		<div>間取り
-		<%= house.floor_plan %></div>							
+		<%= house.floor_plan %></div>
 		<div>郵便番号
-		〒<%= house.zip_code %></div>								
+		〒<%= house.postcode %></div>
 		<div>住所
-		<%= house.address %></div>								
+		<%= house.address %></div>
 		<div>土地面積
-		<%= house.land_area %>㎡</div>							
+		<%= house.land_area %>㎡</div>
 		<div>建物面積
-		<%= house.building_area %>㎡</div>							
+		<%= house.building_area %>㎡</div>
 		<div>築年数
 		<%= house.old %>年</div>
-		
+
         <div>本物件の購入オファー一覧</div>
-	<% house.purchase_offers.each do |purchase_offer| %>    
+	<% house.purchase_offers.each do |purchase_offer| %>
 	    <div>>価格
 		<%= purchase_offer.price %>年</div>
 		<div>>名前
@@ -34,5 +34,5 @@
 		<%= purchase_offer.phone_number %>年</div>
 
 	<% end %>
-    
+
 <% end %>

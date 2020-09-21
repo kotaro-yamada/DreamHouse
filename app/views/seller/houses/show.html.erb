@@ -22,7 +22,7 @@
 				</tr>
 				<tr>
 					<th>郵便番号</th>
-					<td><%= @house.zip_code %></td>
+					<td><%= @house.postcode %></td>
 				</tr>
 				<tr>
 					<th>住所</th>
@@ -48,5 +48,7 @@
 			<!--新規アクション作成の上、path設定-->
 			<%= link_to '+掲載を取りやめる', edit_seller_house_path, class: "btn btn-primary btn-circle pull-right" %>
 	  　　　　<%= link_to '掲載物件の一覧に戻る', seller_houses_path, class: "btn btn-primary btn-circle pull-right" %>
+
+	    <div id="calendar"></div>
 	</div>
 </div>

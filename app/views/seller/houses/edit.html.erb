@@ -6,7 +6,7 @@
 		<%= form_for @house, :url => {controller: :houses, action: :update} do |f| %>
 		<div class="form-group">
 			<%= f.label "建物名" %><%= f.text_field :name, class: "form-control" %>
-			<%= f.label "郵便番号" %><%= f.text_area :zip_code, class: "form-control" %>
+			<%= f.label "郵便番号" %><%= f.text_area :postcode, class: "form-control" %>
 			<%= f.label '都道府県'%>
 			<%= f.collection_select :prefecture_id, @prefectures, :id, :name, :include_blank => '必ず指定してください' %>
 			<%= f.label '市区町村'%>

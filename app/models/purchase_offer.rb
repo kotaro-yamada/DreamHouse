@@ -13,7 +13,7 @@ class PurchaseOffer < ApplicationRecord
   end
 
   def full_address
-	"〒" + zip_code + " " + address
+	"〒" + postcode + " " + address
   end
-  
+
 end

@@ -4,7 +4,7 @@
     <%= form_for @house, :url => {controller:  :houses, action: :create} do |f| %>
         <%= f.attachment_field :image %>
         <h3>建物名<%= f.text_field :name %></h3>
-        <h3>郵便番号<%= f.text_field :zip_code %></h3>
+        <h3>郵便番号<%= f.text_field :postcode %></h3>
         <h3>都道府県<%= f.collection_select :prefecture_id, @prefectures, :id, :name, :include_blank => '必ず指定してください' %></h3>
         <h3>市区町村<%= f.collection_select :city_id, @cities, :id, :name, :include_blank => '必ず指定してください' %></h3>
         <h3>町名・番地<%= f.text_area :address %></h3>
@@ -17,8 +17,6 @@
         <td><%= f.select :sales_status, [["販売中", "販売中"], ["売り止め", "売り止め"], ["成約済み", "成約済み"]], { include_blank: '選択してください'}, { class: 'form-control' , required: true } %></td>
         <%= f.submit '新規登録', class: "btn btn-primary" %>
       <% end %>
-
-
+      <div id="calendar"></div>
   </div>
-
 </div>
